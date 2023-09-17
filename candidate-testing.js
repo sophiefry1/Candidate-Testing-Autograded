@@ -1,24 +1,22 @@
-const input = require('readline-sync');
+const input = require("readline-sync");
 
 // TODO 2: modify your quiz app to ask 5 questions //
 
-// TODO 1.1a: Define candidateName // 
-let candidateName = ""
+// TODO 1.1a: Define candidateName //
+let candidateName = "";
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
-let question = "Who was the first American woman in space? "
+let question = "Who was the first American woman in space? ";
 let correctAnswer = "Sally Ride";
-let candidateAnswer = ""
-
+let candidateAnswer = "";
 
 //TODO: Variables for Part 2
 let questions;
 let correctAnswers;
 let candidateAnswers;
 
-
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
-  candidateName = input.question('Canidate Name: ')
+  candidateName = input.question("Canidate Name: ");
 }
 
 function askQuestion() {
@@ -27,18 +25,16 @@ function askQuestion() {
 }
 
 function gradeQuiz(candidateAnswers) {
-  // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
+  // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly //
   if (candidateAnswer == correctAnswer) {
-    console.log("Overall Grade: 100% 1 of 1 responses correct")
-    console.log("Status: Passed")
+    console.log("Overall Grade: 100% 1 of 1 responses correct");
+    console.log("Status: Passed");
   } else {
-    console.log("0 out of 1 responses correct")
-    console.log("Status: Failed")
+    console.log("0 out of 1 responses correct");
+    console.log("Status: Failed");
   }
 
-
-  let grade;  //TODO 3.2 use this variable to calculate the candidates score.
-
+  let grade; //TODO 3.2 use this variable to calculate the candidates score.
 
   return grade;
 }
@@ -61,5 +57,5 @@ module.exports = {
   correctAnswers: correctAnswers,
   candidateAnswers: candidateAnswers,
   gradeQuiz: gradeQuiz,
-  runProgram: runProgram
+  runProgram: runProgram,
 };

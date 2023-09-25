@@ -18,7 +18,8 @@ let questions = [
 ];
 let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"];
 
-let candidateAnswers; [];
+let candidateAnswers;
+[];
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
@@ -28,8 +29,8 @@ function askForName() {
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   for (let i = 0; i < questions.length; i++) {
-   candidateAnswers.push(input.question(questions[i]));
-   };
+    candidateAnswers.push(input.question(questions[i]));
+  }
 }
 
 function gradeQuiz(candidateAnswers) {
@@ -43,30 +44,31 @@ function gradeQuiz(candidateAnswers) {
   }
 
   let grade; //TODO 3.2 use this variable to calculate the candidates score.
-   let correctResponses = 0 
+  let correctResponses = 0;
 
-   for (let i = 0; i < candidateAnswers.length; i++) {
-   console.log(`${i + 1 })  ${questions[i]}`);
-   console.log(`Your Answer: ${candidateAnswers[i]}`)
-   console.log(`Correct Answer: ${correctAnswers[i]} \n`)
+  for (let i = 0; i < candidateAnswers.length; i++) {
+    console.log(`${i + 1})  ${questions[i]}`);
+    console.log(`Your Answer: ${candidateAnswers[i]}`);
+    console.log(`Correct Answer: ${correctAnswers[i]} \n`);
 
-   if (candidateAnswers[i].toLowerCase() == correctAnswers[i].toLowerCase()) {
-    correctResponses = correctResponses + 1
-   }
+    if (candidateAnswers[i].toLowerCase() == correctAnswers[i].toLowerCase()) {
+      correctResponses = correctResponses + 1;
+    }
+  }
+  grade = (correctResponses / questions.length) * 100;
 
-   }
-   grade = (correctResponses / questions.length) * 100;
+  let status;
 
-   let status;
+  if (grade >= 80) {
+    status = `PASSED`;
+  } else {
+    status = `FAILED`;
+  }
+  console.log(
+    `>>> Overall Grade: ${grade}%  (${correctResponses} of ${questions.length} responses correct) <<<`
+  );
+  console.log(`>>> Status: ${status} <<<`);
 
-   if (grade >=80) {
-      status = `PASSED`
-   } else {
-    status = `FAILED`
-   }
-   console.log(`>>> Overall Grade: ${grade}%  (${correctResponses} of ${questions.length} responses correct) <<<`)
-   console.log(`>>> Status: ${status} <<<`)
-   
   return grade;
 }
 
